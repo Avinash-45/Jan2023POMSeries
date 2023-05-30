@@ -28,6 +28,7 @@ public class CartPage {
 	private By shippingAmount = By.xpath("//strong[text()='Flat Shipping Rate:']/parent::td/following-sibling::td");
 	private By removeProductBtn = By.xpath("//button[@class='btn btn-danger']");
 	private By emptyCartText = By.xpath("(//p[text()='Your shopping cart is empty!'])[2]");
+	private By checkOutBtn = By.xpath("//div[@class='pull-right']/a");
 
 	public String updateProductQuantityInCart() {
 		elementUtil.doClick(updateCartBtn);
@@ -56,6 +57,12 @@ public class CartPage {
 		elementUtil.doClick(removeProductBtn);
 
 		return elementUtil.waitForElementVisible(emptyCartText, AppConstants.MEDIUM_DEFAULT_WAIT).getText();
+	}
+
+	public CheckoutPage navigateToCheckout() {
+
+		elementUtil.doClick(checkOutBtn, AppConstants.MEDIUM_DEFAULT_WAIT);
+		return new CheckoutPage(driver);
 	}
 
 }

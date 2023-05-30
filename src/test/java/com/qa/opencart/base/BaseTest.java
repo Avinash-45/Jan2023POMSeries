@@ -12,6 +12,7 @@ import org.testng.asserts.SoftAssert;
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.pages.AccountsPage;
 import com.qa.opencart.pages.CartPage;
+import com.qa.opencart.pages.CheckoutPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductInfopage;
 import com.qa.opencart.pages.ProductListingPage;
@@ -30,6 +31,7 @@ public class BaseTest {
 	protected CartPage cartPage;
 	protected WishListPage wishListPage;
 	protected ProductListingPage productListingPage;
+	protected CheckoutPage checkoutPage;
 	protected DriverFactory driverFactory;
 	protected Properties prop;
 

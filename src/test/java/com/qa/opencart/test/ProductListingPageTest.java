@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.utils.AppConstants;
 
 public class ProductListingPageTest extends BaseTest {
 
@@ -24,6 +25,13 @@ public class ProductListingPageTest extends BaseTest {
 	public void totalProductCountInPLPTest() {
 		int actualValue = productListingPage.totalProductCount();
 		Assert.assertEquals(actualValue, 12);
+
+	}
+
+	@Test
+	public void compareProductsTest() {
+		String actualValue = productListingPage.compareProducts();
+		Assert.assertEquals(actualValue, AppConstants.COMPARE_PRODUCT_SUCCESS_TEXT);
 
 	}
 

@@ -21,4 +21,5 @@ public class AppConstants {
 	public static final String CART_EMPTY_MESSAGE = "Your shopping cart is empty!";
 	public static final String FLAT_SHIPPING_RATE_INDIA = "$5.00";
 	public static final String WISHLIST_PAGE_TITLE = "My Wish List";
+	public static final String COMPARE_PRODUCT_SUCCESS_TEXT = "Success: You have added Apple Cinema 30\" to your product comparison!";
 }

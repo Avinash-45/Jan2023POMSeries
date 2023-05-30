@@ -63,4 +63,10 @@
 			<class name="com.qa.opencart.test.ProductListingPageTest" />
 		</classes>
 	</test>
+	<test name="Checkout Page Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.opencart.test.CheckoutPageTest" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->
