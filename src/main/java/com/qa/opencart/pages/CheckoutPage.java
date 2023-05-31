@@ -32,5 +32,9 @@ public class CheckoutPage {
 		elementUtil.doClick(confirmOrderContinueBtn, AppConstants.MEDIUM_DEFAULT_WAIT);
 
 	}
+	
+	public void placeOrderWithoutPrefilledData() {
+		
+	}
 
 }
