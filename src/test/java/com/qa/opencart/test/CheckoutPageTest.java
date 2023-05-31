@@ -21,4 +21,9 @@ public class CheckoutPageTest extends BaseTest {
 		checkoutPage.placeOrderWithPrefilledData();
 	}
 
+	@Test
+	public void placeOrderWithoutFilledDataTest() {
+		checkoutPage.placeOrderWithoutPrefilledData();
+	}
+
 }
