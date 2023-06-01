@@ -67,6 +67,7 @@ public class LoginPageTest extends BaseTest {
 		accountsPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		String actTitle = accountsPage.getAccPageTitle();
 		Assert.assertEquals(actTitle, "My Account");
+		System.out.println("new code for git");
 	}
 
 }
