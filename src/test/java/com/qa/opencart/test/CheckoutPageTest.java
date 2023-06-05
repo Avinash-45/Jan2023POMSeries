@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.qa.opencart.base.BaseTest;
 
 public class CheckoutPageTest extends BaseTest {
-	@BeforeClass
+	@BeforeClass(groups = "sanityTest")
 	public void checkoutPageSetUp() {
 		accountsPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		resultsPage = accountsPage.doSearch("MacBook");
@@ -16,12 +16,12 @@ public class CheckoutPageTest extends BaseTest {
 		checkoutPage = cartPage.navigateToCheckout();
 	}
 
-	@Test
+	@Test(groups = { "sanityTest" })
 	public void placeOrderWithFilledDataTest() {
 		checkoutPage.placeOrderWithPrefilledData();
 	}
 
-	@Test
+	@Test(groups = { "sanityTest" })
 	public void placeOrderWithoutFilledDataTest() {
 		checkoutPage.placeOrderWithoutPrefilledData();
 	}

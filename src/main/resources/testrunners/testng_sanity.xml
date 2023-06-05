@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Application Regression Suite" verbose="4" thread-count="1" parallel="tests">
+	<groups>
+		<run>
+			<include name="sanityTest" />
+		</run>
+	</groups>
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.listeners.TestAllureListener" />
+		<listener
+			class-name="com.qa.opencart.listeners.AnnotationTransformer" />
+	</listeners>
+		<test name="Login Page Test">
+			<classes>
+				<class name="com.qa.opencart.test.LoginPageTest" />
+			</classes>
+		</test>
+		<test name="Product Listing Page Test">
+			<classes>
+				<class name="com.qa.opencart.test.ProductListingPageTest" />
+			</classes>
+		</test>
+		<test name="Checkout Page Test">
+			<classes>
+				<class name="com.qa.opencart.test.CheckoutPageTest" />
+			</classes>
+		</test>
+		<test name="Login page Negative Test">
+			<parameter name="browser" value="firefox" />
+			<classes>
+				<class name="com.qa.opencart.test.LoginPageNegativeTests" />
+			</classes>
+		</test>
+</suite> <!-- Suite -->

@@ -36,7 +36,7 @@ public class BaseTest {
 	protected Properties prop;
 
 	@Parameters({ "browser" })
-	@BeforeTest
+	@BeforeTest(groups = "sanityTest")
 	public void setup(@Optional String browserName) {
 		driverFactory = new DriverFactory();
 		prop = driverFactory.initProp();
@@ -49,7 +49,7 @@ public class BaseTest {
 
 	}
 
-	@AfterTest
+	@AfterTest(groups = "sanityTest")
 	public void tearDown() {
 		driver.quit();
 	}

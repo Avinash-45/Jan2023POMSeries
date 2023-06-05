@@ -62,7 +62,7 @@ public class LoginPageTest extends BaseTest {
 
 	@Story(value = "Positive Login Scenario")
 	@Severity(value = SeverityLevel.BLOCKER)
-	@Test
+	@Test(groups = { "sanityTest" })
 	public void userAbleToLoginTest() {
 		accountsPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		String actTitle = accountsPage.getAccPageTitle();

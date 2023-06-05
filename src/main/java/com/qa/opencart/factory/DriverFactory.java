@@ -44,7 +44,7 @@ public class DriverFactory {
 			break;
 
 		default:
-			throw new FrameWorkException("No Browser Found excpetion");
+			throw new FrameWorkException("No Browser Found exception");
 		}
 		getDriver().manage().window().maximize();
 		getDriver().manage().deleteAllCookies();

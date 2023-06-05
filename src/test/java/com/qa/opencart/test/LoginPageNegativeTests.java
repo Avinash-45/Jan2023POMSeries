@@ -23,7 +23,7 @@ public class LoginPageNegativeTests extends BaseTest {
 
 	}
 
-	@Test(dataProvider = "getIncorrectUserNamePasswordDataFromExcel")
+	@Test(dataProvider = "getIncorrectUserNamePasswordDataFromExcel", groups = { "sanityTest" })
 	public void userNotAbleToLoginTest(String username, String password) {
 		boolean message = loginPage.doLoginWithWrongCredentials(username, password);
 		Assert.assertTrue(message);

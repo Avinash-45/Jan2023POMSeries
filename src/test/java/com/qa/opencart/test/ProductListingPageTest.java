@@ -9,7 +9,7 @@ import com.qa.opencart.utils.AppConstants;
 
 public class ProductListingPageTest extends BaseTest {
 
-	@BeforeClass
+	@BeforeClass(groups = "sanityTest")
 	public void productListingPageSetup() {
 		productListingPage = loginPage.navigateToPLP();
 	}
@@ -21,7 +21,7 @@ public class ProductListingPageTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(groups = { "sanityTest" })
 	public void totalProductCountInPLPTest() {
 		int actualValue = productListingPage.totalProductCount();
 		Assert.assertEquals(actualValue, 12);
