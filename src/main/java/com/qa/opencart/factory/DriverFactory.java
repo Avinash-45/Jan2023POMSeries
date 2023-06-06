@@ -61,7 +61,7 @@ public class DriverFactory {
 		FileInputStream ip = null;
 		String envName = System.getProperty("env");
 		try {
-			if (envName == null) {
+			if (envName == null || envName.equals("uat")) {
 
 				ip = new FileInputStream("src/main/resources/config/config.properties");
 
