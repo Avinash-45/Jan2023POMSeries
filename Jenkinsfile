@@ -29,7 +29,7 @@ pipeline
         
         stage("Deploy to QA"){
             steps{
-                echo("deploy to qa")
+                echo("Code deployed to qa")
             }
         }
         
@@ -38,7 +38,7 @@ pipeline
         stage('Regression Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/Jan2023POMSeries.git'
+                    git 'https://github.com/Avinash-45/OpenCart.git'
                     sh "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_regression.xml"
                     
                 }
@@ -46,7 +46,7 @@ pipeline
         }
                 
      
-        stage('Publish Allure Reports') {
+        stage('Publish Allure Reports for regression tests') {
            steps {
                 script {
                     allure([
@@ -61,17 +61,6 @@ pipeline
         }
         
         
-        stage('Publish Extent Report'){
-            steps{
-                     publishHTML([allowMissing: false,
-                                  alwaysLinkToLastBuild: false, 
-                                  keepAll: true, 
-                                  reportDir: 'reports', 
-                                  reportFiles: 'TestExecutionReport.html', 
-                                  reportName: 'HTML Regression Extent Report', 
-                                  reportTitles: ''])
-            }
-        }
         
         stage("Deploy to Stage"){
             steps{
@@ -82,7 +71,7 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/Jan2023POMSeries.git'
+                    git 'https://github.com/Avinash-45/OpenCart.git'
                     sh "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
                     
                 }
