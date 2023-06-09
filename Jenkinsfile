@@ -3,7 +3,7 @@ pipeline
     agent any
     
     tools{
-        maven 'Maven'
+        maven 'maven'
         }
 
     stages 
@@ -38,7 +38,7 @@ pipeline
         stage('Regression Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/Avinash-45/OpenCart.git'
+                    git 'https://github.com/naveenanimation20/Jan2023POMSeries.git'
                     sh "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_regression.xml"
                     
                 }
@@ -46,7 +46,7 @@ pipeline
         }
                 
      
-        stage('Publish Allure Reports for regression') {
+        stage('Publish Allure Reports') {
            steps {
                 script {
                     allure([
@@ -61,6 +61,17 @@ pipeline
         }
         
         
+        stage('Publish Extent Report'){
+            steps{
+                     publishHTML([allowMissing: false,
+                                  alwaysLinkToLastBuild: false, 
+                                  keepAll: true, 
+                                  reportDir: 'reports', 
+                                  reportFiles: 'TestExecutionReport.html', 
+                                  reportName: 'HTML Regression Extent Report', 
+                                  reportTitles: ''])
+            }
+        }
         
         stage("Deploy to Stage"){
             steps{
@@ -71,7 +82,7 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/Avinash-45/OpenCart.git'
+                    git 'https://github.com/naveenanimation20/Jan2023POMSeries.git'
                     sh "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
                     
                 }
@@ -80,17 +91,15 @@ pipeline
         
         
         
-       stage('Publish Allure Reports for sanity') {
-           steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: '/allure-results']]
-                    ])
-                }
+        stage('Publish sanity Extent Report'){
+            steps{
+                     publishHTML([allowMissing: false,
+                                  alwaysLinkToLastBuild: false, 
+                                  keepAll: true, 
+                                  reportDir: 'reports', 
+                                  reportFiles: 'TestExecutionReport.html', 
+                                  reportName: 'HTML Sanity Extent Report', 
+                                  reportTitles: ''])
             }
         }
         
