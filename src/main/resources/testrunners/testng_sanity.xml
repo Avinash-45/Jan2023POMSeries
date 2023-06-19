@@ -12,7 +12,7 @@
 	</listeners>
 	<test name="Login Page Test">
 		<parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="113.0" />
+		<!--<parameter name="browserversion" value="113.0" />-->
 		<classes>
 			<class name="com.qa.opencart.test.LoginPageTest" />
 		</classes>
@@ -26,14 +26,14 @@
 	</test>
 	<test name="Checkout Page Test">
 		<parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="79.0" />
-		<classes>
+<!--		<parameter name="browserversion" value="79.0" />
+-->		<classes>
 			<class name="com.qa.opencart.test.CheckoutPageTest" />
 		</classes>
 	</test>
 	<test name="Login page Negative Test">
 		<parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="79.0" />
+		<!--<parameter name="browserversion" value="79.0" />-->
 		<classes>
 			<class name="com.qa.opencart.test.LoginPageNegativeTests" />
 		</classes>

@@ -35,14 +35,14 @@ public class BaseTest {
 	protected DriverFactory driverFactory;
 	protected Properties prop;
 
-	@Parameters({ "browser", "browserversion" })
+	@Parameters({ "browser" })
 	@BeforeTest(groups = "sanityTest")
-	public void setup(@Optional String browserName, @Optional String browserVersion) {
+	public void setup(@Optional String browserName) {
 		driverFactory = new DriverFactory();
 		prop = driverFactory.initProp();
 		if (browserName != null) {
 			prop.setProperty("browser", browserName);
-			prop.setProperty("browserversion", browserVersion);
+			// prop.setProperty("browserversion", browserVersion);
 		}
 		driver = driverFactory.initDriver(prop);
 		loginPage = new LoginPage(driver);

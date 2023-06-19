@@ -27,7 +27,7 @@ public class OptionsManager {
 		}
 		if (prop.getProperty("remote").equals("true")) {
 			co.setCapability("browserName", "chrome");
-			co.setBrowserVersion(prop.getProperty("browserversion"));
+			// co.setBrowserVersion(prop.getProperty("browserversion"));
 		}
 		return co;
 
@@ -43,7 +43,7 @@ public class OptionsManager {
 		}
 		if (prop.getProperty("remote").equals("true")) {
 			fo.setCapability("browserName", "firefox");
-			fo.setBrowserVersion(prop.getProperty("browserversion"));
+			// fo.setBrowserVersion(prop.getProperty("browserversion"));
 		}
 		return fo;
 
